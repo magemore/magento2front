@@ -7,14 +7,16 @@ use SimplifiedMagento\FirstModule\NotMagento\PencilInterface;
 class HelloWorld extends \Magento\Framework\App\Action\Action
 {
 
+    protected $pencilInteface;
 
-    public function __construct(Context $context, PencilInterface $pencil)
+    public function __construct(Context $context, PencilInterface $pencilInteface)
     {
+        $this->pencilInteface = $pencilInteface;
         parent::__construct($context);
     }
 
     public function execute()
     {
-        echo "Hello World";
+        echo $this->pencilInteface->getPencilType();
     }
 }
