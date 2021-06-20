@@ -4,4 +4,10 @@
     <preference for="SimplifiedMagento\FirstModule\Api\PencilInterface" type="SimplifiedMagento\FirstModule\Model\Pencil" />
     <preference for="SimplifiedMagento\FirstModule\Api\Color" type="SimplifiedMagento\FirstModule\Model\YellowColor" />
     <preference for="SimplifiedMagento\FirstModule\Api\Size" type="SimplifiedMagento\FirstModule\Model\Normal" />
+    <type name="SimplifiedMagento\FirstModule\Model\Pencil">
+        <arguments>
+            <argument name="color" xsi:type="object">SimplifiedMagento\FirstModule\Model\Red</argument>
+            <argument name="size" xsi:type="object">SimplifiedMagento\FirstModule\Model\Big</argument>
+        </arguments>
+    </type>
 </config>
