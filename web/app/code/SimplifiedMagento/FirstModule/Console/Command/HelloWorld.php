@@ -13,6 +13,9 @@ class HelloWorld extends Command
         $this->setName('training:hello_world')
             ->setDescription('the command prints out hello world')
             ->setAliases(array('hw'));
+        $this->setDefinition(array(
+           new InputArgument('name', InputArgument::OPTIONAL, 'the name of the person', null, null),
+        ));
     }
 
     public function execute(InputInterface $input, OutputInterface $output)
