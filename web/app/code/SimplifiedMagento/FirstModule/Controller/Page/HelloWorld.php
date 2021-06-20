@@ -7,6 +7,7 @@ use Magento\Catalog\Api\ProductRepositoryInterface;
 use SimplifiedMagento\FirstModule\Model\PencilFactory;
 use Magento\Catalog\Model\ProductFactory;
 use Magento\Framework\Event\ManagerInterface;
+use Magento\Framework\App\Request\Http;
 
 class HelloWorld extends \Magento\Framework\App\Action\Action
 {
@@ -16,8 +17,10 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
 //    protected $pencilFactory;
     protected $productFactory;
     protected $_eventManager;
+    protected $http;
 
     public function __construct(Context $context,
+                                Http $http,
                                 ManagerInterface $_eventManager,
                                 ProductFactory $productFactory,
 //                                PencilFactory $pencilFactory,
@@ -28,6 +31,7 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
 //        $this->pencilFactory = $pencilFactory;
         $this->productFactory = $productFactory;
         $this->_eventManager = $_eventManager;
+        $this->http = $http;
         parent::__construct($context);
     }
 
