@@ -42,7 +42,7 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
     public function execute()
     {
         $id = $this->http->getParam('id', 0);
-        if (id == 1) {
+        if ($id == 1) {
             $this->heavyService->printHeavyServiceMessage();
         }
         else {
