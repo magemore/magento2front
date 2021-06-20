@@ -25,7 +25,7 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
-        $pencil = $this->pencilFactory->create(array("name"=>"Alex"));
+        $pencil = $this->pencilFactory->create(array("name"=>"Bob", "school"=>"International College"));
         echo "<pre>";
         var_dump($pencil);
         echo "</pre>";

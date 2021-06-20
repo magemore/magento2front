@@ -12,13 +12,15 @@ class Pencil implements PencilInterface
     protected $color;
     protected $size;
     protected $name;
+    protected $school;
 
-    public function __construct(Color $color, Size $size, $name = null)
+    public function __construct(Color $color, Size $size, $name = null, $school = null)
     {
 //        echo get_class($color);
         $this->color = $color;
         $this->size = $size;
         $this->name = $name;
+        $this->school = $school;
     }
 
     public function getPencilType()
