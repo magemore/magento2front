@@ -36,7 +36,7 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
         $product->setName("Iphone 6");
         $productName = $product->getName();
 //        echo "<pre>";
-        echo $productName;
+//        echo $productName;
 //        echo "</pre>";
 
     }
