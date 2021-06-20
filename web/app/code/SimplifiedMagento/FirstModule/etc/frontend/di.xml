@@ -13,7 +13,7 @@
         <plugin name="plugin_on_execute2"
                 type="SimplifiedMagento\FirstModule\Plugin\PluginSolution2" sortOrder="20"/>
         <plugin name="plugin_on_execute3"
-                type="SimplifiedMagento\FirstModule\Plugin\PluginSolution2" sortOrder="30"/>
+                type="SimplifiedMagento\FirstModule\Plugin\PluginSolution3" sortOrder="30"/>
     </type>
 
     <virtualType name="virtualType" type="SimplifiedMagento\FirstModule\Model\Yellow">
