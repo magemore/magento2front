@@ -17,7 +17,10 @@ class PluginSolution
 
     public function aroundGetName(\Magento\Catalog\Model\Product $subject, callable $proceed)
     {
-        echo "before proceed";
+        echo "before proceed ";
         $name = proceed();
+        echo $name;
+        echo " after proceed";
+        return $name;
     }
 }
