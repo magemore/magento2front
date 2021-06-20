@@ -24,7 +24,7 @@
 
     <type name="SimplifiedMagento\FirstModule\Controller\Page\HelloWorld">
         <arguments>
-            <argument name="heavyService" xsi:type="object">SimplifiedMagento\FirstModule\Model\HeavyService</argument>
+            <argument name="heavyService" xsi:type="object">SimplifiedMagento\FirstModule\Model\HeavyService\Proxy</argument>
         </arguments>
     </type>
 
