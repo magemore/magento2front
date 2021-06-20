@@ -6,7 +6,7 @@ use SimplifiedMagento\FirstModule\Api\PencilInterface;
 use Magento\Catalog\Api\ProductRepositoryInterface;
 use SimplifiedMagento\FirstModule\Model\PencilFactory;
 use Magento\Catalog\Model\ProductFactory;
-use Magento\Framework\Event\EventManagerInterface;
+use Magento\Framework\Event\ManagerInterface;
 
 class HelloWorld extends \Magento\Framework\App\Action\Action
 {
