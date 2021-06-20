@@ -8,6 +8,7 @@ use SimplifiedMagento\FirstModule\Model\PencilFactory;
 use Magento\Catalog\Model\ProductFactory;
 use Magento\Framework\Event\ManagerInterface;
 use Magento\Framework\App\Request\Http;
+use SimplifiedMagento\FirstModule\Model\HeavyService;
 
 class HelloWorld extends \Magento\Framework\App\Action\Action
 {
@@ -18,8 +19,10 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
     protected $productFactory;
     protected $_eventManager;
     protected $http;
+    protected $heavyService;
 
     public function __construct(Context $context,
+                                HeavyService $heavyService,
                                 Http $http,
                                 ManagerInterface $_eventManager,
                                 ProductFactory $productFactory,
@@ -32,14 +35,19 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
         $this->productFactory = $productFactory;
         $this->_eventManager = $_eventManager;
         $this->http = $http;
+        $this->heavyService = $heavyService;
         parent::__construct($context);
     }
 
     public function execute()
     {
-        $message = new \Magento\Framework\DataObject(array("greeting"=>"Good afternoon"));
-        $this->_eventManager->dispatch('custom_event',['greeting'=>$message]);
-        echo $message->getGreeting();
+        $id = $this->http->getParam('id', 0);
+        if (id == 1) {
+            $this->heavyService->printHeavyServiceMessage();
+        }
+        else {
+            echo "heavyService not used";
+        }
     }
 
 }
