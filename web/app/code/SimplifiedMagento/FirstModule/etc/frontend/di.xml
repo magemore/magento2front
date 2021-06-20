@@ -15,7 +15,7 @@
 
     <type name="SimplifiedMagento\FirstModule\Model\Pencil">
         <arguments>
-            <argument name="color" xsi:type="object">virtualType</argument>
+            <argument name="color" xsi:type="object">SimplifiedMagento\FirstModule\Model\Red</argument>
             <argument name="size" xsi:type="object">SimplifiedMagento\FirstModule\Model\Big</argument>
         </arguments>
     </type>
