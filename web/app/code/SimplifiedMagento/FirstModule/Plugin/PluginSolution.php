@@ -17,6 +17,12 @@ class PluginSolution
         echo "after execute sort order 10";
     }
 
+    public function aroundExecute(\SimplifiedMagento\FirstModule\Controller\Page\HelloWorld $subject, callable $proceed)
+    {
+        echo "before proceed sort order 10";
+        $proceed();
+    }
+
 
 //    public function beforeSetName(\Magento\Catalog\Model\Product $subject, $name)
 //    {

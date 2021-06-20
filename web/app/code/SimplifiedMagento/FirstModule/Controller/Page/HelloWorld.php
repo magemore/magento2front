@@ -29,13 +29,15 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
+        echo "Main function";
+
 //        $pencil = $this->pencilFactory->create(array("name"=>"Bob", "school"=>"International College"));
 //        var_dump($pencil);
 
-        $product = $this->productFactory->create()->load(1);
-        $product->setName("Iphone 6");
-
-        $id = $product->getIdBySku('Testing 2');
+//        $product = $this->productFactory->create()->load(1);
+//        $product->setName("Iphone 6");
+//
+//        $id = $product->getIdBySku('Testing 2');
 
 //        $productName = $product->getName();
 //        echo "<pre>";
