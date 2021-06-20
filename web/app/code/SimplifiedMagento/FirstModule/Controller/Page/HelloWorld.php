@@ -17,12 +17,12 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
 
     public function __construct(Context $context,
                                 ProductFactory $productFactory,
-                                PencilFactory $pencilFactory,
+//                                PencilFactory $pencilFactory,
                                 PencilInterface $pencilInteface, ProductRepositoryInterface $productRepository)
     {
         $this->pencilInteface = $pencilInteface;
         $this->productRepository = $productRepository;
-        $this->pencilFactory = $pencilFactory;
+//        $this->pencilFactory = $pencilFactory;
         $this->productFactory = $productFactory;
         parent::__construct($context);
     }
