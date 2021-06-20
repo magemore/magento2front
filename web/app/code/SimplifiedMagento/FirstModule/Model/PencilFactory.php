@@ -12,6 +12,6 @@ class PencilFactory
     }
 
     public function create(array $data) {
-        return $this->objectManager->create('SimplifiedMagento\FirstModule\Api\PencilInterface');
+        return $this->objectManager->create('SimplifiedMagento\FirstModule\Api\PencilInterface', $data);
     }
 }
