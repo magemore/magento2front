@@ -8,12 +8,12 @@
     <preference for="SimplifiedMagento\FirstModule\Api\Brightness" type="SimplifiedMagento\FirstModule\Model\Medium" />
 
 
-    <type name="SimplifiedMagento\FirstModule\Model\Pencil">
-        <arguments>
-            <argument name="color" xsi:type="object">SimplifiedMagento\FirstModule\Model\Red</argument>
-            <argument name="size" xsi:type="object">SimplifiedMagento\FirstModule\Model\Big</argument>
-        </arguments>
-    </type>
+<!--    <type name="SimplifiedMagento\FirstModule\Model\Pencil">-->
+<!--        <arguments>-->
+<!--            <argument name="color" xsi:type="object">SimplifiedMagento\FirstModule\Model\Red</argument>-->
+<!--            <argument name="size" xsi:type="object">SimplifiedMagento\FirstModule\Model\Big</argument>-->
+<!--        </arguments>-->
+<!--    </type>-->
 
 
 
