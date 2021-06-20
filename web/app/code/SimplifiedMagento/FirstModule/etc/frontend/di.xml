@@ -2,7 +2,7 @@
 
     <preference for="Magento\Catalog\Api\ProductRepositoryInterface" type="SimplifiedMagento\FirstModule\Model\CustomImplementation" />
     <preference for="SimplifiedMagento\FirstModule\Api\PencilInterface" type="SimplifiedMagento\FirstModule\Model\Pencil" />
-    <preference for="SimplifiedMagento\FirstModule\Api\Color" type="SimplifiedMagento\FirstModule\Model\YellowColor" />
+    <preference for="SimplifiedMagento\FirstModule\Api\Color" type="SimplifiedMagento\FirstModule\Model\Yellow" />
     <preference for="SimplifiedMagento\FirstModule\Api\Size" type="SimplifiedMagento\FirstModule\Model\Normal" />
     <type name="SimplifiedMagento\FirstModule\Model\Pencil">
         <arguments>
@@ -10,6 +10,8 @@
             <argument name="size" xsi:type="object">SimplifiedMagento\FirstModule\Model\Big</argument>
         </arguments>
     </type>
+
+
 
     <type name="SimplifiedMagento\FirstModule\Model\Student">
         <arguments>
