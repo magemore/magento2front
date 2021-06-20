@@ -23,7 +23,7 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
 //        echo $this->pencilInteface->getPencilType();
 //        echo get_class($this->productRepository);
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        book = $objectManager->create('SimplifiedMagento\FirstModule\Model\Book');
+        $book = $objectManager->create('SimplifiedMagento\FirstModule\Model\Book');
         echo '<pre>';
         var_dump($book);
         echo '</pre>';
