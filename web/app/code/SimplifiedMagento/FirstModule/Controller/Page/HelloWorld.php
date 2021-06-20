@@ -15,6 +15,7 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
     protected $productRepository;
 //    protected $pencilFactory;
     protected $productFactory;
+    protected $_eventManager;
 
     public function __construct(Context $context,
                                 ManagerInterface $_eventManager,
@@ -26,12 +27,14 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
         $this->productRepository = $productRepository;
 //        $this->pencilFactory = $pencilFactory;
         $this->productFactory = $productFactory;
+        $this->_eventManager = $_eventManager;
         parent::__construct($context);
     }
 
     public function execute()
     {
         $message = new \Magento\Framework\DataObject(array("greeting"=>"Good afternoon"));
+        $this->_eventManager->dispatch('custom_event',['greeting'=>$message]);
         echo $message->getGreeting();
     }
 
