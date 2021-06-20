@@ -7,8 +7,8 @@
 
     <preference for="SimplifiedMagento\FirstModule\Api\Brightness" type="SimplifiedMagento\FirstModule\Model\Medium" />
 
-    <type name="Magento\Catalog\Model\Product">
-        <plugin name="before_set_name"
+    <type name="SimplifiedMagento\FirstModule\Controller\Page\HelloWorld">
+        <plugin name="plugin_on_execute"
                 type="SimplifiedMagento\FirstModule\Plugin\PluginSolution" sortOrder="10"/>
     </type>
 
