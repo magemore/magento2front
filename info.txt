@@ -1,2 +1,7 @@
 run elastic search. cd ~/docker
 docker run -m 1024m -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.13.2
+
+
+http://magento2front.loc/admin_xqolr8/admin/index/index/key/df8a1bb141352f70bd3ea612e67418262fef91e9f5bba6dc88c44e465d49f5f7/
+admin
+admin123
