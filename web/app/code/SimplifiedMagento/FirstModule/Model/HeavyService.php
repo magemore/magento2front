@@ -8,7 +8,7 @@ class HeavyService
 {
     public function __construct()
     {
-        echo "HeavyService has been installated";
+        echo "HeavyService has been installated"."<br>";
     }
 
     public function printHeavyServiceMessage() {
