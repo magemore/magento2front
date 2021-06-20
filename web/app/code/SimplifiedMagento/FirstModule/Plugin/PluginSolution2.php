@@ -4,24 +4,24 @@
 namespace SimplifiedMagento\FirstModule\Plugin;
 
 
-class PluginSolution
+class PluginSolution2
 {
 
     public function beforeExecute(\SimplifiedMagento\FirstModule\Controller\Page\HelloWorld $subject)
     {
-        echo "before execute sort order 10<br>";
+        echo "before execute sort order 20<br>";
     }
 
     public function afterExecute(\SimplifiedMagento\FirstModule\Controller\Page\HelloWorld $subject)
     {
-        echo "after execute sort order 10<br>";
+        echo "after execute sort order 20<br>";
     }
 
     public function aroundExecute(\SimplifiedMagento\FirstModule\Controller\Page\HelloWorld $subject, callable $proceed)
     {
-        echo "before proceed sort order 10<br>";
+        echo "before proceed sort order 20<br>";
         $proceed();
-        echo "<br>after proceed sort order 10<br>";
+        echo "<br>after proceed sort order 20<br>";
     }
 
 

@@ -10,6 +10,8 @@
     <type name="SimplifiedMagento\FirstModule\Controller\Page\HelloWorld">
         <plugin name="plugin_on_execute"
                 type="SimplifiedMagento\FirstModule\Plugin\PluginSolution" sortOrder="10"/>
+        <plugin name="plugin_on_execute"
+                type="SimplifiedMagento\FirstModule\Plugin\PluginSolution2" sortOrder="20"/>
     </type>
 
     <virtualType name="virtualType" type="SimplifiedMagento\FirstModule\Model\Yellow">
