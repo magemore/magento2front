@@ -15,6 +15,15 @@ class PluginSolution
 //        return $result . " After Plugin";
 //    }
 
+    public function aroundGetIdBySku(\Magento\Catalog\Model\Product $subject, callable $proceed, $sku)
+    {
+        echo "before proceed ";
+        $id = $proceed($sku);
+        echo $id;
+        echo " after proceed";
+        return $id;
+    }
+
     public function aroundGetName(\Magento\Catalog\Model\Product $subject, callable $proceed)
     {
         echo "before proceed ";

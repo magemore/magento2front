@@ -34,7 +34,10 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
 
         $product = $this->productFactory->create()->load(1);
         $product->setName("Iphone 6");
-        $productName = $product->getName();
+
+        $id = $product->getIdBySku('Testing 1');
+
+//        $productName = $product->getName();
 //        echo "<pre>";
 //        echo $productName;
 //        echo "</pre>";
