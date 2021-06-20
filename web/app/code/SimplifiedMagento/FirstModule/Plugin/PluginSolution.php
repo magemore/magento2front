@@ -21,6 +21,7 @@ class PluginSolution
     {
         echo "before proceed sort order 10";
         $proceed();
+        echo "after proceed sort order 10";
     }
 
 
