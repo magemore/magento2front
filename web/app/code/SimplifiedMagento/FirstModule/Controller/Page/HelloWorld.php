@@ -20,6 +20,8 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
-        echo $this->pencilInteface->getPencilType();
+//        echo $this->pencilInteface->getPencilType();
+        echo get_class($this->productRepository);
     }
+
 }
