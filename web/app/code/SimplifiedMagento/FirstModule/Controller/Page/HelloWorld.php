@@ -13,10 +13,11 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
 
     protected $pencilInteface;
     protected $productRepository;
-    protected $pencilFactory;
+//    protected $pencilFactory;
     protected $productFactory;
 
     public function __construct(Context $context,
+                                ManagerInterface $_eventManager,
                                 ProductFactory $productFactory,
 //                                PencilFactory $pencilFactory,
                                 PencilInterface $pencilInteface, ProductRepositoryInterface $productRepository)
