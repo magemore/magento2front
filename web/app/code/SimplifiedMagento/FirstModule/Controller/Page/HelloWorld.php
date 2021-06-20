@@ -35,9 +35,9 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
         $product = $this->productFactory->create()->load(1);
         $product->setName("Iphone 6");
         $productName = $product->getName();
-        echo "<pre>";
-        var_dump($productName);
-        echo "</pre>";
+//        echo "<pre>";
+        echo $productName;
+//        echo "</pre>";
 
     }
 
