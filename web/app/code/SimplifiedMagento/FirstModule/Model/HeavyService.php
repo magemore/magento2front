@@ -10,4 +10,8 @@ class HeavyService
     {
         echo "HeavyService has been installated";
     }
+
+    public function printHeavyServiceMessage() {
+        echo "message from HeavyService class";
+    }
 }
