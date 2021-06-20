@@ -6,6 +6,18 @@ namespace SimplifiedMagento\FirstModule\Plugin;
 
 class PluginSolution
 {
+
+    public function beforeExecute(\SimplifiedMagento\FirstModule\Controller\Page\HelloWorld $subject)
+    {
+        echo "before execute sort order 10";
+    }
+
+    public function afterExecute(\SimplifiedMagento\FirstModule\Controller\Page\HelloWorld $subject)
+    {
+        echo "after execute sort order 10";
+    }
+
+
 //    public function beforeSetName(\Magento\Catalog\Model\Product $subject, $name)
 //    {
 //        return "Before Plugin " . $name;
