@@ -15,7 +15,7 @@ class HelloWorl extends Command
             ->setAliases(array('hw'));
     }
 
-    public function execute()
+    public function execute(InputInterface $input, OutputInterface $output)
     {
 
     }
