@@ -4,11 +4,11 @@
 namespace SimplifiedMagento\FirstModule\Model;
 
 
-class Students
+class Student
 {
     private $name;
     private $age;
-    public function __construct($name, $age) {
+    public function __construct($name = "Alex", $age = 28) {
         $this->name = $name;
         $this->age = $age;
     }
