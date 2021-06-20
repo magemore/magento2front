@@ -27,6 +27,7 @@ class HelloWorld extends \Magento\Framework\App\Action\Action
         echo '<pre>';
         var_dump($pencil);
         echo '</pre>';
+        $book = $objectManager->create('SimplifiedMagento\FirstModule\Model\Book');
     }
 
 }
