@@ -56,7 +56,7 @@ class InstallSchema implements InstallSchemaInterface {
                     'TIME UPDATED'
                 )->setComment('Affiliate Member Table')
         );
-
+        $setup->getConnection()->createTable($table);
         $setup->endSetup();
     }
 }
