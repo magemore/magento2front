@@ -8,20 +8,20 @@ use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\Controller\Result\JsonFactory;
-use Magento\Framework\Controller\Result\RawFactory;
+use Magento\Framework\Controller\Result\Raw;
 
 class ResponseType extends Action
 {
 
     protected $pageFactory;
     protected $jsonFactory;
-    protected $rawFactory;
+    protected $raw;
 
-    public function __construct(Context $context, PageFactory $pageFactory, JsonFactory $jsonFactory, RawFactory $rawFactory)
+    public function __construct(Context $context, PageFactory $pageFactory, JsonFactory $jsonFactory, Raw $raw)
     {
         $this->pageFactory = $pageFactory;
         $this->jsonFactory = $jsonFactory;
-        $this->rawFactory = $rawFactory;
+        $this->raw = $raw;
         parent::__construct($context);
     }
 
@@ -29,7 +29,7 @@ class ResponseType extends Action
     {
 //        return $this->pageFactory->create();
 //        return $this->jsonFactory->create()->setData(['key'=>'value','key2'=>['one','two']]);
-        $result = $this->rawFactory->setContents('Hello World');
+        $result = $this->raw->setContents('Hello World');
         return $result;
     }
 
