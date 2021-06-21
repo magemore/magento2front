@@ -9,7 +9,7 @@ use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\Controller\Result\JsonFactory;
 use Magento\Framework\Controller\Result\Raw;
-use Magento\Framework\Controller\Result\Forward\Factory;
+use Magento\Framework\Controller\Result\ForwardFactory;
 
 class ResponseType extends Action
 {
