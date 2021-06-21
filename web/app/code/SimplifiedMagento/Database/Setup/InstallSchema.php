@@ -30,6 +30,18 @@ class InstallSchema implements InstallSchemaInterface {
                     255,
                     ['nullable' => false],
                     'NAME OF MEMBER'
+                )->addColumn(
+                    'address',
+                    Table::TYPE_TEXT,
+                    255,
+                    ['nullable' => false],
+                    'ADDRESS OF MEMBER'
+                )->addColumn(
+                    'status',
+                    Table::TYPE_BOOLEAN,
+                    10,
+                    ['nullable' => false, 'default' => false],
+                    'STATUS'
                 )
         );
 
