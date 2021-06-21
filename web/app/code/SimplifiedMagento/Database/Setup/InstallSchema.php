@@ -51,7 +51,7 @@ class InstallSchema implements InstallSchemaInterface {
                 'updated_at',
                 Table::TYPE_TIMESTAMP,
                 null,
-                ['nullable' => false, 'default'=>Table::TIMESTAMP_INIT],
+                ['nullable' => false, 'default'=>Table::TIMESTAMP_INIT_UPDATE],
                 'TIME UPDATED'
             )->setComment('Affiliate Member Table');
         $setup->getConnection()->createTable($table);
