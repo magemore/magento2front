@@ -42,6 +42,12 @@ class InstallSchema implements InstallSchemaInterface {
                     10,
                     ['nullable' => false, 'default' => false],
                     'STATUS'
+                )->addColumn(
+                    'created_at',
+                    Table::TYPE_TIMESTAMP,
+                    null,
+                    ['nullable' => false, 'default'=>Table::TIMESTAMP_INIT],
+                    'TIME CREATED'
                 )
         );
 
