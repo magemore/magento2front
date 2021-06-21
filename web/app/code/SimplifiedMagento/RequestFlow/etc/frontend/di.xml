@@ -5,7 +5,7 @@
             <argument name="handlerClassesList" xsi:type="array">
                 <item name="handlerinfo" xsi:type="array">
                     <item name="class" xsi:type="string">SimplifiedMagento\RequestFlow\Controller\Page\CustomNoRouteHandler</item>
-                    <item name="sort_order" xsi:type="number">50</item>
+                    <item name="sortOrder" xsi:type="string">50</item>
                 </item>
             </argument>
         </arguments>
