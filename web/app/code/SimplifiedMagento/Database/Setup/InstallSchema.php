@@ -24,6 +24,12 @@ class InstallSchema implements InstallSchemaInterface {
                     null,
                     ['identity' =>true, 'nullable'=>false, 'primary' =>true],
                     'MEMBER ID'
+                )->addColumn(
+                    'name',
+                    Table::TYPE_TEXT,
+                    255,
+                    ['nullable' => false],
+                    'NAME OF MEMBER'
                 )
         );
 
