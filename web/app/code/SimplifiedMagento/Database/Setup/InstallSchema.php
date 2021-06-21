@@ -18,7 +18,13 @@ class InstallSchema implements InstallSchemaInterface {
         $setup->startSetup();
         $table = $setup->getConnection()->newTable(
             $setup->getTable('affiliate_member')
-                ->addColumn('entity_id', Table::TYPE_INTEGER, null, ['identity' =>true, 'nullable'=>false, 'primary' =>true])
+                ->addColumn(
+                    'entity_id',
+                    Table::TYPE_INTEGER,
+                    null,
+                    ['identity' =>true, 'nullable'=>false, 'primary' =>true],
+                    'MEMBER ID'
+                )
         );
 
         $setup->endSetup();
