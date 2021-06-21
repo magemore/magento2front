@@ -13,6 +13,7 @@ class ResponseType extends Action
 {
 
     protected $pageFactory;
+    protected $jsonFactory;
 
     public function __construct(Context $context, PageFactory $pageFactory, JsonFactory $jsonFactory)
     {
