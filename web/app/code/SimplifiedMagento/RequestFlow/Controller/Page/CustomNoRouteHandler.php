@@ -10,6 +10,7 @@ class CustomNoRouteHandler implements NoRouteHandlerInterface
 
     public function process(\Magento\Framework\App\RequestInterface $request)
     {
-        // TODO: Implement process() method.
+        $request->setRouteName('noroutefound')->setControllerName('page')->setActionName('customnoroute');
+        return true;
     }
 }
