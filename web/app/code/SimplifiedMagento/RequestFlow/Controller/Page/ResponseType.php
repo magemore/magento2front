@@ -23,6 +23,7 @@ class ResponseType extends Action
 
     public function execute()
     {
-        return $this->pageFactory->create();
+//        return $this->pageFactory->create();
+        return $this->jsonFactory->create()->setData(['key'=>'value']);
     }
 }
