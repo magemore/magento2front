@@ -35,6 +35,8 @@ class ResponseType extends Action
 //        $result = $this->raw->setContents('Hello World');
 //        return $result;
         $result = $this->forwardFactory->create();
+        $result->setModule('noroutefound')->setController('page')->forward('customnoroute');
+        return $result;
     }
 
 }
