@@ -46,7 +46,7 @@ class ResponseType extends Action
 //        $result = $this->forwardFactory->create();
 //        $result->setModule('noroutefound')->setController('page')->forward('customnoroute');
         $result = $this->redirectFactory->create();
-        $result->setPath('noroutefound');
+        $result->setPath('noroutefound/page/customnoroute');
         return $result;
     }
 
