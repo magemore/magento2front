@@ -24,9 +24,11 @@ class Index extends Action
     public function execute()
     {
         $affiliateMember = $this->affiliateMemberFactory->create();
-        $member = $affiliateMember->load(1);
-        $member->setAddress('new address');
-        $member->save();
+        $affiliateMember->addData([''])
+
+//        $member = $affiliateMember->load(1);
+//        $member->setAddress('new address');
+//        $member->save();
 //        var_dump($member->getData());
     }
 }
