@@ -12,7 +12,9 @@ class Index extends Action
 {
     protected $affiliateMemberFactory;
 
-    public function __construct(Context $context, AffiliateMemberFactory $affiliateMemberFactory)
+    public function __construct(Context $context,
+                                AffiliateMemberFactory $affiliateMemberFactory
+    )
     {
         $this->affiliateMemberFactory = $affiliateMemberFactory;
         parent::__construct($context);
@@ -23,12 +25,12 @@ class Index extends Action
      */
     public function execute()
     {
-        $affiliateMember = $this->affiliateMemberFactory->create();
-        $collection = $affiliateMember->getCollection();
-        foreach ($collection as $item) {
-            print_r($item->getData());
-            echo '<br>';
-        }
+//        $affiliateMember = $this->affiliateMemberFactory->create();
+//        $collection = $affiliateMember->getCollection();
+//        foreach ($collection as $item) {
+//            print_r($item->getData());
+//            echo '<br>';
+//        }
 
 //        $member = $affiliateMember->load(4);
 //        $member->delete();
