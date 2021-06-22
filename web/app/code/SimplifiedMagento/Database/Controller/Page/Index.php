@@ -23,6 +23,8 @@ class Index extends Action
      */
     public function execute()
     {
-        // TODO: Implement execute() method.
+        $affiliateMember = $this->affiliateMemberFactory->create();
+        $member = $affiliateMember->load(1);
+        var_dump($member->getData());
     }
 }
