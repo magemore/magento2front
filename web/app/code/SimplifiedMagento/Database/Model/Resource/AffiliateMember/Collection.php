@@ -12,6 +12,6 @@ class Collection extends AbstractCollection
     protected function __construct()
     {
         parent::__construct();
-        $this->_init();
+        $this->_init(AffiliateMember::class, AffiliateMemberResource::class);
     }
 }
