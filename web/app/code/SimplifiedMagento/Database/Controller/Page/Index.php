@@ -11,12 +11,15 @@ use SimplifiedMagento\Database\Model\AffiliateMemberFactory;
 class Index extends Action
 {
     protected $affiliateMemberFactory;
+    protected $affiliateMemberCollectionFactory;
 
     public function __construct(Context $context,
-                                AffiliateMemberFactory $affiliateMemberFactory
+                                AffiliateMemberFactory $affiliateMemberFactory,
+                                SimplifiedMagento\Database\Model\Resource\AffiliateMember\collectionFactory $affiliateMemberCollectionFactory
     )
     {
         $this->affiliateMemberFactory = $affiliateMemberFactory;
+        $this->$affiliateMemberCollectionFactory = $affiliateMemberCollectionFactory;
         parent::__construct($context);
     }
 
@@ -25,6 +28,8 @@ class Index extends Action
      */
     public function execute()
     {
+        $collection = $this->affiliateMemberCollectionFactory->create();
+
 //        $collection = $this->_objectManager->create('\SimplifiedMagento\Database\Model\Resource\AffiliateMember\Collection');
 //        $affiliateMember = $this->affiliateMemberFactory->create();
 //        $collection = $affiliateMember->getCollection();
