@@ -24,7 +24,11 @@ class Index extends Action
     public function execute()
     {
         $affiliateMember = $this->affiliateMemberFactory->create();
-
+        $collection = $affiliateMember->getCollection();
+        foreach ($collection as $item) {
+            print_r($item->getData());
+            echo '<br>';
+        }
 
 //        $member = $affiliateMember->load(4);
 //        $member->delete();
