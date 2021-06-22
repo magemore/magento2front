@@ -25,6 +25,8 @@ class Index extends Action
     {
         $affiliateMember = $this->affiliateMemberFactory->create();
         $member = $affiliateMember->load(1);
-        var_dump($member->getData());
+        $member->setAddress('new address');
+        $member->save();
+//        var_dump($member->getData());
     }
 }
