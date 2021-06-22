@@ -19,7 +19,9 @@ class UpgradeData implements UpgradeSchemaInterface
     {
         $setup->startSetup();
 
+        if (version_compare($context->getVersion(), '0.0.3', '<')) {
 
+        }
 
         $setup->endSetup();
     }
