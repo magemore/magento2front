@@ -24,7 +24,7 @@ class Index extends Action
     public function execute()
     {
         $affiliateMember = $this->affiliateMemberFactory->create();
-        $affiliateMember->addData(['name']=>'Rand', 'address'=>'a new address', 'status'=>true, 'phone_number' => '971809876');
+        $affiliateMember->addData(['name'=>'Rand', 'address'=>'a new address', 'status'=>true, 'phone_number' => '971809876']);
         $affiliateMember->save();
 
 //        $member = $affiliateMember->load(1);
