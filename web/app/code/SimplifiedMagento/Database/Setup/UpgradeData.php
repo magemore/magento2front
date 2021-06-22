@@ -20,7 +20,10 @@ class UpgradeData implements UpgradeSchemaInterface
         $setup->startSetup();
 
         if (version_compare($context->getVersion(), '0.0.3', '<')) {
-
+            $setup->getConnection()->insert(
+                $setup->getTable('affiliate_member'),
+                ['name'=>'Ade','status'=>true,'address'=>'no 13, Dubai','phone_number'=>'97104047849']
+            );
         }
 
         $setup->endSetup();
