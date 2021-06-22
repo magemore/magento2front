@@ -25,6 +25,7 @@ class Index extends Action
      */
     public function execute()
     {
+//        $collection = $this->_objectManager->create('\SimplifiedMagento\Database\Model\Resource\AffiliateMember\Collection');
 //        $affiliateMember = $this->affiliateMemberFactory->create();
 //        $collection = $affiliateMember->getCollection();
 //        foreach ($collection as $item) {
