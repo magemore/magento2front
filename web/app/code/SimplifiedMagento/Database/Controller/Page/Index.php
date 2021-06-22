@@ -24,7 +24,7 @@ class Index extends Action
     public function execute()
     {
         $affiliateMember = $this->affiliateMemberFactory->create();
-        $member = $affiliateMember->load(1);
+        $member = $affiliateMember->load(2);
         var_dump($member->getData());
     }
 }
