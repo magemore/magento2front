@@ -42,12 +42,12 @@ class Index extends Action
 
 //        var_dump($member->getData());
 
-//        $affiliateMember = $this->affiliateMemberFactory->create();
-//        $collection = $affiliateMember->getCollection();
-//        foreach ($collection as $item) {
-//            print_r($item->getData());
-//            echo '<br>';
-//        }
+        $affiliateMember = $this->affiliateMemberFactory->create();
+        $collection = $affiliateMember->getCollection()->addFieldToSelect('name');
+        foreach ($collection as $item) {
+            print_r($item->getData());
+            echo '<br>';
+        }
 
     }
 }
