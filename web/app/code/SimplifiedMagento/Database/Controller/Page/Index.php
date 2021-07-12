@@ -28,9 +28,13 @@ class Index extends Action
     {
         $affiliateMember = $this->affiliateMemberFactory->create();
 
-        $affiliateMember->addData(['name'=>'Rand','address'=>'a new address','status'=>true,'phone_number'=>'976412312']);
-        $affiliateMember->save();
-        echo 'add new member Rand';
+//        $member = $affiliateMember->load(4);
+//        $member->delete();
+//        echo 'delete 4';
+
+//        $affiliateMember->addData(['name'=>'Rand','address'=>'a new address','status'=>true,'phone_number'=>'976412312']);
+//        $affiliateMember->save();
+//        echo 'add new member Rand';
 
 //        $member = $affiliateMember->load(2);
 //        $member->setAddress('No 11, Dubai');
