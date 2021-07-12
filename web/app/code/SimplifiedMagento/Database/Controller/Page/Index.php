@@ -43,7 +43,7 @@ class Index extends Action
 //        var_dump($member->getData());
 
         $affiliateMember = $this->affiliateMemberFactory->create();
-        $collection = $affiliateMember->getCollection()->addFieldToSelect('name');
+        $collection = $affiliateMember->getCollection()->addFieldToSelect(['name','status']);
         foreach ($collection as $item) {
             print_r($item->getData());
             echo '<br>';
