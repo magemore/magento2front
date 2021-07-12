@@ -14,6 +14,11 @@ class AffiliateMember extends AbstractModel implements AffiliateMemberInterface
         $this->_init(AffiliateMemberResource::class);
     }
 
+    public function getId()
+    {
+        return $this->getData(AffiliateMemberInterface::ID);
+    }
+
     public function getName()
     {
         return $this->getData(AffiliateMemberInterface::NAME);
@@ -21,46 +26,46 @@ class AffiliateMember extends AbstractModel implements AffiliateMemberInterface
 
     public function getStatus()
     {
-        // TODO: Implement getStatus() method.
+        return $this->getData(AffiliateMemberInterface::STATUS);
     }
 
     public function getAddress()
     {
-        // TODO: Implement getAddress() method.
+        return $this->getData(AffiliateMemberInterface::ADDRESS);
     }
 
     public function getPhoneNumber()
     {
-        // TODO: Implement getPhoneNumber() method.
+        return $this->getData(AffiliateMemberInterface::PHONE_NUMBER);
     }
 
     public function getCreatedAt()
     {
-        // TODO: Implement getCreatedAt() method.
+        return $this->getData(AffiliateMemberInterface::CREATED_AT);
     }
 
     public function getUpdatedAt()
     {
-        // TODO: Implement getUpdatedAt() method.
+        return $this->getData(AffiliateMemberInterface::UPDATED_AT);
     }
 
     public function setName($name)
     {
-        // TODO: Implement setName() method.
+        $this->setData(AffiliateMemberInterface::NAME, $name);
     }
 
     public function setStatus($status)
     {
-        // TODO: Implement setStatus() method.
+        $this->setData(AffiliateMemberInterface::STATUS, $status);
     }
 
     public function setAddress($address)
     {
-        // TODO: Implement setAddress() method.
+        $this->setData(AffiliateMemberInterface::ADDRESS, $address);
     }
 
     public function setPhoneNumber($phoneNumber)
     {
-        // TODO: Implement setPhoneNumber() method.
+        $this->setData(AffiliateMemberInterface::PHONE_NUMBER, $phoneNumber);
     }
 }
