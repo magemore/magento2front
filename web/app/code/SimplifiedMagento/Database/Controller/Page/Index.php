@@ -43,7 +43,9 @@ class Index extends Action
 //        var_dump($member->getData());
 
         $affiliateMember = $this->affiliateMemberFactory->create();
-        $collection = $affiliateMember->getCollection()->addFieldToSelect(['name','status']);
+        $collection = $affiliateMember->getCollection()
+            ->addFieldToSelect(['name','status'])
+            ->addFieldToFilter('name', [['eq'=>'Bob']]);
         foreach ($collection as $item) {
             print_r($item->getData());
             echo '<br>';
