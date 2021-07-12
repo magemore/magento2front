@@ -27,9 +27,14 @@ class Index extends Action
     public function execute()
     {
         $affiliateMember = $this->affiliateMemberFactory->create();
-        $member = $affiliateMember->load(2);
-        $member->setAddress('No 11, Dubai');
-        $member->save();
+
+        $affiliateMember->addData(['name'=>'Rand','address'=>'a new address','status'=>true,'phone_number'=>'976412312']);
+        $affiliateMember->save();
+        echo 'add new member Rand';
+
+//        $member = $affiliateMember->load(2);
+//        $member->setAddress('No 11, Dubai');
+//        $member->save();
 
 //        var_dump($member->getData());
 
