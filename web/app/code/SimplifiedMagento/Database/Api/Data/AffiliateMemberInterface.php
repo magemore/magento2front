@@ -6,6 +6,15 @@ namespace SimplifiedMagento\Database\Api\Data;
 
 interface AffiliateMemberInterface
 {
+
+    const NAME = "name";
+    const ID = "entity_id";
+    const STATUS = "status";
+    const ADDRESS = "address";
+    const PHONE_NUMBER = "phone_number";
+    const CREATED_AT = "created_at";
+    const UPDATED_AT = "updated_at";
+
     /*
      * @return int
      */
@@ -71,7 +80,7 @@ interface AffiliateMemberInterface
      */
     public function setPhoneNumber($phoneNumber);
 
-    
+
 
 
 }
