@@ -28,14 +28,17 @@ class Index extends Action
     {
         $affiliateMember = $this->affiliateMemberFactory->create();
         $member = $affiliateMember->load(2);
+        $member->setAddress('No 11, Dubai');
+        $member->save();
+
 //        var_dump($member->getData());
 
 //        $affiliateMember = $this->affiliateMemberFactory->create();
-        $collection = $affiliateMember->getCollection();
-        foreach ($collection as $item) {
-            print_r($item->getData());
-            echo '<br>';
-        }
+//        $collection = $affiliateMember->getCollection();
+//        foreach ($collection as $item) {
+//            print_r($item->getData());
+//            echo '<br>';
+//        }
 
     }
 }
