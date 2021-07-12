@@ -27,15 +27,15 @@ class Index extends Action
     public function execute()
     {
         $affiliateMember = $this->affiliateMemberFactory->create();
-        $member = $affiliateMember->load(1);
-        var_dump($member->getData());
+        $member = $affiliateMember->load(2);
+//        var_dump($member->getData());
 
 //        $affiliateMember = $this->affiliateMemberFactory->create();
-//        $collection = $affiliateMember->getCollection();
-//        foreach ($collection as $item) {
-//            print_r($item->getData());
-//            echo '<br>';
-//        }
+        $collection = $affiliateMember->getCollection();
+        foreach ($collection as $item) {
+            print_r($item->getData());
+            echo '<br>';
+        }
 
     }
 }

@@ -11,9 +11,8 @@ class Collection extends AbstractCollection
 {
     protected $_idFieldName = 'entity_id';
 
-    protected function __construct()
+    protected function _construct()
     {
-        parent::__construct();
         $this->_init(AffiliateMember::class, AffiliateMemberResource::class);
     }
 }
