@@ -9,6 +9,8 @@ use SimplifiedMagento\Database\Model\Resource\AffiliateMember as AffiliateMember
 
 class Collection extends AbstractCollection
 {
+    protected $_idFieldName = 'entity_id';
+
     protected function __construct()
     {
         parent::__construct();
