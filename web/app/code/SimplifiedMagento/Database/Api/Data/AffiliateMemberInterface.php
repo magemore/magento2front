@@ -26,7 +26,7 @@ interface AffiliateMemberInterface
     public function getName();
 
     /**
-     * @return Boolean
+     * @return bool
      */
     public function getStatus();
 
