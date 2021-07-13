@@ -13,4 +13,12 @@
             <resource ref="anonymous" />
         </resources>
     </route>
+
+    <route method="GET" url="/V1/affiliate_member/:id">
+        <service class="SimplifiedMagento\Database\Api\AffiliateMemberRepositoryInterface" method="getAffiliateMember" />
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
 </routes>

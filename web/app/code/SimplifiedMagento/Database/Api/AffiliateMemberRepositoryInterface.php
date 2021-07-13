@@ -11,4 +11,10 @@ interface AffiliateMemberRepositoryInterface
      */
     public function getList();
 
+    /**
+     * @param int $id
+     * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface
+     */
+    public function getAffiliateMember($id);
+
 }
