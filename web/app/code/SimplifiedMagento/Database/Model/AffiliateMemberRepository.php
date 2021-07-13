@@ -16,8 +16,11 @@ class AffiliateMemberRepository implements AffiliateMemberRepositoryInterface
         $this->collectionFactory = $collectionFactory;
     }
 
+    /**
+    * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface[]
+    */
     public function getList()
     {
-        $this->collectionFactory->create()->getItems();
+        return $this->collectionFactory->create()->getItems();
     }
 }
