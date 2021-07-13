@@ -63,10 +63,10 @@ interface AffiliateMemberInterface
     public function setName($name);
 
     /**
-     * @param Boolean $status
+     * @param bool $status
      * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface
      */
-    public function setStatus($status);
+    public function setStatus(bool $status): AffiliateMemberInterface;
 
     /**
      * @param string $address

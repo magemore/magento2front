@@ -54,7 +54,7 @@ class AffiliateMember extends AbstractModel implements AffiliateMemberInterface
         $this->setData(AffiliateMemberInterface::NAME, $name);
     }
 
-    public function setStatus($status)
+    public function setStatus(bool $status): AffiliateMemberInterface
     {
         $this->setData(AffiliateMemberInterface::STATUS, $status);
     }
