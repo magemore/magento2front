@@ -87,6 +87,7 @@ class AffiliateMemberRepository implements AffiliateMemberRepositoryInterface
      */
     public function getSearchResultsList(SearchCriteriaInterface $searchCriteria)
     {
-
+        $collection = $this->affiliateMemberFactory->create()->getCollection();
+        $this->collectionProcessor->process($searchCriteria, $collection);
     }
 }
