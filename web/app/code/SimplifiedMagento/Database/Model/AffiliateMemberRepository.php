@@ -46,10 +46,19 @@ class AffiliateMemberRepository implements AffiliateMemberRepositoryInterface
      * @param \SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface $member
      * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface
      */
-    public function saveAffiliateMember(SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface $member)
+    public function saveAffiliateMember(\SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface $member)
     {
         if ($member->getId() == null) {
-
+            $this->affiliateMember->save($member);
+            return $member;
+        }
+        else {
+            $newMember = $this->affiliateMemberFactory->create()->load($member->getId());
+            foreach ($member->getData() as $key => $value) {
+                $newMember->setData($key, $value);
+            }
+            $this->affiliateMember->save($newMember);
+            return $newMember;
         }
     }
 }

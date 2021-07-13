@@ -22,5 +22,5 @@ interface AffiliateMemberRepositoryInterface
      * @param \SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface $member
      * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface
      */
-    public function saveAffiliateMember(SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface $member);
+    public function saveAffiliateMember(\SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface $member);
 }
