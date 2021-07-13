@@ -17,4 +17,10 @@ interface AffiliateMemberRepositoryInterface
      */
     public function getAffiliateMemberById($id);
 
+
+    /**
+     * @param \SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface $member
+     * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface
+     */
+    public function saveAffiliateMember(SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface $member);
 }
