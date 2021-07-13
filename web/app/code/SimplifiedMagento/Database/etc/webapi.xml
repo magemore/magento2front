@@ -42,4 +42,11 @@
         </resources>
     </route>
 
+    <route method="DELETE" url="/V1/affiliate_member/search">
+        <service class="SimplifiedMagento\Database\Api\AffiliateMemberRepositoryInterface" method="getSearchResultsList" />
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
 </routes>
