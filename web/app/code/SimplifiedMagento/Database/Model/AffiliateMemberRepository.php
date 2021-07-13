@@ -43,6 +43,16 @@ class AffiliateMemberRepository implements AffiliateMemberRepositoryInterface
     }
 
     /**
+     * @param int $id
+     * @return void
+     */
+    public function deleteAffiliateMemberById($id) {
+        $member = $this->affiliateMemberFactory->create();
+        $member->load($id);
+        $member->delete();
+    }
+
+    /**
      * @param \SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface $member
      * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface
      */

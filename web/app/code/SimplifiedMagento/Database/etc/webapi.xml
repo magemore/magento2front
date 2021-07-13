@@ -35,4 +35,11 @@
         </resources>
     </route>
 
+    <route method="DELETE" url="/V1/affiliate_member/:id">
+        <service class="SimplifiedMagento\Database\Api\AffiliateMemberRepositoryInterface" method="deleteAffiliateMemberById" />
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+
 </routes>

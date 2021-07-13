@@ -17,6 +17,12 @@ interface AffiliateMemberRepositoryInterface
      */
     public function getAffiliateMemberById($id);
 
+    /**
+     * @param int $id
+     * @return void
+     */
+    public function deleteAffiliateMemberById($id);
+
 
     /**
      * @param \SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface $member
