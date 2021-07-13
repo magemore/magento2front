@@ -18,16 +18,19 @@ class AffiliateMemberRepository implements AffiliateMemberRepositoryInterface
     private $affiliateMemberFactory;
     private $affiliateMember;
     private $resultInterfaceFactory;
+    private $collectionProcessor;
 
     public function __construct(CollectionFactory $collectionFactory,
                                 AffiliateMemberFactory $affiliateMemberFactory,
                                 AffiliateMember $affiliateMember,
-                                AffiliateMemberSearchResultsInterfaceFactory $resultInterfaceFactory)
+                                AffiliateMemberSearchResultsInterfaceFactory $resultInterfaceFactory,
+                                CollectionProcessor $collectionProcessor)
     {
         $this->collectionFactory = $collectionFactory;
         $this->affiliateMemberFactory = $affiliateMemberFactory;
         $this->affiliateMember = $affiliateMember;
         $this->resultInterfaceFactory = $resultInterfaceFactory;
+        $this->collectionProcessor = $collectionProcessor;
     }
 
     /**
