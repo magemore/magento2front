@@ -15,6 +15,6 @@ interface AffiliateMemberRepositoryInterface
      * @param int $id
      * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface
      */
-    public function getAffiliateMember($id);
+    public function getAffiliateMemberById($id);
 
 }

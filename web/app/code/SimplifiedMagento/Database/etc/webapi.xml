@@ -15,7 +15,7 @@
     </route>
 
     <route method="GET" url="/V1/affiliate_member/:id">
-        <service class="SimplifiedMagento\Database\Api\AffiliateMemberRepositoryInterface" method="getAffiliateMember" />
+        <service class="SimplifiedMagento\Database\Api\AffiliateMemberRepositoryInterface" method="getAffiliateMemberById" />
         <resources>
             <resource ref="anonymous" />
         </resources>

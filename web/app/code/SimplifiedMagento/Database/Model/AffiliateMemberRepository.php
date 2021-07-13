@@ -31,7 +31,7 @@ class AffiliateMemberRepository implements AffiliateMemberRepositoryInterface
      * @param int $id
      * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface
      */
-    public function getAffiliateMember($id)
+    public function getAffiliateMemberById($id)
     {
         $member = $this->affiliateMemberFactory->create();
         return $member->load($id);
