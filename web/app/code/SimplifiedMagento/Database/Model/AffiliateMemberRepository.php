@@ -3,10 +3,13 @@
 
 namespace SimplifiedMagento\Database\Model;
 
+use Magento\Framework\Api\SearchCriteriaInterface;
 use SimplifiedMagento\Database\Api\AffiliateMemberRepositoryInterface;
 use SimplifiedMagento\Database\Model\Resource\AffiliateMember\CollectionFactory;
 use SimplifiedMagento\Database\Model\AffiliateMemberFactory;
 use SimplifiedMagento\Database\Model\Resource\AffiliateMember;
+use SimplifiedMagento\Database\Api\Data\AffiliateMemberSearchResultsInterfaceFactory;
+use Magento\Framework\Api\SearchCriteria\CollectionProcessor;
 
 class AffiliateMemberRepository implements AffiliateMemberRepositoryInterface
 {
@@ -14,14 +17,17 @@ class AffiliateMemberRepository implements AffiliateMemberRepositoryInterface
     private $collectionFactory;
     private $affiliateMemberFactory;
     private $affiliateMember;
+    private $resultInterfaceFactory;
 
     public function __construct(CollectionFactory $collectionFactory,
                                 AffiliateMemberFactory $affiliateMemberFactory,
-                                AffiliateMember $affiliateMember)
+                                AffiliateMember $affiliateMember,
+                                AffiliateMemberSearchResultsInterfaceFactory $resultInterfaceFactory)
     {
         $this->collectionFactory = $collectionFactory;
         $this->affiliateMemberFactory = $affiliateMemberFactory;
         $this->affiliateMember = $affiliateMember;
+        $this->resultInterfaceFactory = $resultInterfaceFactory;
     }
 
     /**
@@ -70,5 +76,14 @@ class AffiliateMemberRepository implements AffiliateMemberRepositoryInterface
             $this->affiliateMember->save($newMember);
             return $newMember;
         }
+    }
+
+    /**
+     * @param SearchCriteriaInterface $searchCriteria
+     * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberSearchResultsInterface
+     */
+    public function getSearchResultsList(SearchCriteriaInterface $searchCriteria)
+    {
+
     }
 }

@@ -3,6 +3,7 @@
 
 namespace SimplifiedMagento\Database\Api;
 
+use Magento\Framework\Api\SearchCriteriaInterface;
 
 interface AffiliateMemberRepositoryInterface
 {
@@ -29,4 +30,10 @@ interface AffiliateMemberRepositoryInterface
      * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface
      */
     public function saveAffiliateMember(\SimplifiedMagento\Database\Api\Data\AffiliateMemberInterface $member);
+
+    /**
+     * @param SearchCriteriaInterface $searchCriteria
+     * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberSearchResultsInterface
+     */
+    public function getSearchResultsList(SearchCriteriaInterface $searchCriteria);
 }
