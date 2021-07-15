@@ -2,4 +2,4 @@
 
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Magento/luma', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/SimplifiedMagento/CustomTheme', __DIR__);
