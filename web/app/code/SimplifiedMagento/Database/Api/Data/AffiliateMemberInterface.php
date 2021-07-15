@@ -3,8 +3,9 @@
 
 namespace SimplifiedMagento\Database\Api\Data;
 
+use Magento\Framework\Api\ExtensibleDataInterface;
 
-interface AffiliateMemberInterface
+interface AffiliateMemberInterface extends ExtensibleDataInterface
 {
 
     const NAME = "name";
@@ -80,7 +81,16 @@ interface AffiliateMemberInterface
      */
     public function setPhoneNumber($phoneNumber);
 
+    /**
+     * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberExtensionInterface|null
+     */
+    public function getExtensionAttributes();
 
 
+    /**
+     * @param \SimplifiedMagento\Database\Api\Data\AffiliateMemberExtensionInterface $affiliateMemberExtension
+     * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberExtensionInterface
+     */
+    public function setExtensionAttributes(\SimplifiedMagento\Database\Api\Data\AffiliateMemberExtensionInterface $affiliateMemberExtension);
 
 }
