@@ -42,6 +42,23 @@ class InstallData implements InstallDataInterface
             ]
         );
 
+        $eavSetup->addAttribute(
+            \Magento\Catalog\Model\Product::ENTITY,
+            'member_type',
+            [
+                'group'=>'Content',
+                'type' =>'text',
+                'global'=>\Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
+                'visible'=>true,
+                'required' =>false,
+                'searchable'=>false,
+                'used_in_product_listing' =>true,
+                'label'=>'Member Type',
+                'input'=>'select'
+//                'source'=>
+            ]
+        );
+
         $setup->endSetup();
     }
 }
