@@ -54,8 +54,8 @@ class InstallData implements InstallDataInterface
                 'searchable'=>false,
                 'used_in_product_listing' =>true,
                 'label'=>'Member Type',
-                'input'=>'select'
-//                'source'=>
+                'input'=>'select',
+                'source'=>\SimplifiedMagento\Attribute\Model\Config\Options::class
             ]
         );
 
