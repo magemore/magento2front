@@ -89,7 +89,7 @@ interface AffiliateMemberInterface extends ExtensibleDataInterface
 
     /**
      * @param \SimplifiedMagento\Database\Api\Data\AffiliateMemberExtensionInterface $affiliateMemberExtension
-     * @return \SimplifiedMagento\Database\Api\Data\AffiliateMemberExtensionInterface
+     * @return @this
      */
     public function setExtensionAttributes(\SimplifiedMagento\Database\Api\Data\AffiliateMemberExtensionInterface $affiliateMemberExtension);
 
