@@ -32,6 +32,7 @@ class InstallData implements InstallDataInterface
             [
                 'group'=>'Content',
                 'type' =>'text',
+                'backend' => \SimplifiedMagento\Attribute\Model\Config\Validation::class,
                 'global'=>\Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
                 'visible'=>true,
                 'required' =>true,
