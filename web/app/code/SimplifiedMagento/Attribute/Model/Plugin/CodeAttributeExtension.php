@@ -23,7 +23,9 @@ class CodeAttributeExtension
             $extensionAttributes = $this->extensionFactory->create();
         }
 
-        $extensionAttributes->setCode("Code #".$id);
+        // set code dosen't work gives error.
+        // Error: Call to undefined method SimplifiedMagento\Database\Api\Data\AffiliateMemberExtension::setCode
+//        $extensionAttributes->setCode("Code #".$id);
         $model->setExtensionAttributes($extensionAttributes);
         return $model;
     }
