@@ -1,0 +1,11 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <Firstsection>
+            <Firstgroup>
+                <FirstField1>This is default value</FirstField1>
+                <FirstField>This is default value</FirstField>
+                <SecondField>1</SecondField>
+            </Firstgroup>
+        </Firstsection>
+    </default>
+</config>
