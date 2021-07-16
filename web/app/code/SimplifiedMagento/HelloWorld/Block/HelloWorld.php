@@ -19,19 +19,6 @@ class HelloWorld extends \Magento\Framework\View\Element\Template
         parent::__construct($context, $data);
     }
 
-    public function getHelloWorld()
-    {
-        return "This is from custom Block";
-    }
-
-    public function helloArray() {
-        $array = [
-            'good',
-            'very good',
-            'excellent'
-        ];
-        return $array;
-    }
 
     public function getProductName()
     {

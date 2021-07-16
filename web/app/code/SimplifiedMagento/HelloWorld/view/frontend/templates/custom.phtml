@@ -1,6 +1,9 @@
 <?php
-    $hello = $block->getHelloWorld();
-    $helloArray = $block->helloArray();
+    /** @var \SimplifiedMagento\HelloWorld\ViewModel\HelloView $viewModel */
+    $viewModel = $block->getData('view_model');
+    
+    $hello = $viewModel->getHelloWorld();
+    $helloArray = $viewModel->helloArray();
 ?>
 
 <ul>
@@ -9,8 +12,4 @@
 <?php endforeach ?>
 </ul>
 
-<h1><?php echo $hello; ?></h1>
-
-<h2><?php echo $this->getShowHello(); ?></h2>
-<h2><?php print_r($this->getShowArray()); ?></h2>
-<h1><?php echo $block->getProductName() ?></h1>
+<h1><?php echo $hello ?></h1>

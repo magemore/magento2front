@@ -10,11 +10,7 @@
         <referenceContainer name="content">
             <block class="SimplifiedMagento\HelloWorld\Block\HelloWorld" name="hello_world" template="SimplifiedMagento_HelloWorld::custom.phtml">
                 <arguments>
-                    <argument name="show_hello" xsi:type="string">From Layout to Templates</argument>
-                    <argument name="show_array" xsi:type="array">
-                        <item name="first" xsi:type="string">first array</item>
-                        <item name="second" xsi:type="string">second array</item>
-                    </argument>
+                    <argument name="view_model" xsi:type="object">SimplifiedMagento\HelloWorld\ViewModel\HelloView</argument>
                 </arguments>
             </block>
         </referenceContainer>
