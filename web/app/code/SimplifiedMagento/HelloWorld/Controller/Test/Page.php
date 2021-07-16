@@ -28,6 +28,6 @@ class Page extends Action
      */
     public function execute()
     {
-        // TODO: Implement execute() method.
+        return $this->pageFactory->create();
     }
 }
