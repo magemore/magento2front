@@ -30,5 +30,7 @@ class Index extends Action
     public function execute()
     {
         echo $this->scopeConfig->getValue('Firstsection/Firstgroup/FirstField');
+        echo '<br>';
+        print_r($this->scopeConfig->getValue('Firstsection/Firstgroup/ThirdField'));
     }
 }
