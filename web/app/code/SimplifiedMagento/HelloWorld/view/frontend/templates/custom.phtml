@@ -1,5 +1,12 @@
 <?php
     $hello = $block->getHelloWorld();
+    $helloArray = $block->helloArray();
 ?>
+
+<ul>
+<?php foreach ($helloArray as $helloWorld): ?>
+    <li><?php echo $helloWorld ?></li>
+<?php endforeach ?>
+</ul>
 
 <h1><?php echo $hello; ?></h1>

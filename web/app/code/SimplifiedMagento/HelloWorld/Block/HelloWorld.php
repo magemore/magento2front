@@ -10,4 +10,13 @@ class HelloWorld extends \Magento\Framework\View\Element\Template
     {
         return "This is from custom Block";
     }
+
+    public function helloArray() {
+        $array = [
+            'good',
+            'very good',
+            'excellent'
+        ];
+        return $array;
+    }
 }
