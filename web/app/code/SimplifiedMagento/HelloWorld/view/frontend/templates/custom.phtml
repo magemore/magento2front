@@ -1,10 +1,12 @@
 <?php
     /** @var \SimplifiedMagento\HelloWorld\ViewModel\HelloView $viewModel */
     $viewModel = $block->getData('view_model');
-    
+
     $hello = $viewModel->getHelloWorld();
     $helloArray = $viewModel->helloArray();
 ?>
+
+<h2><?php echo $viewModel->getProductName() ?></h2>
 
 <ul>
 <?php foreach ($helloArray as $helloWorld): ?>
