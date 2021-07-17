@@ -7,6 +7,17 @@
         <!-- same string as above -->
         <item name="deps" xsi:type="string">jobs_department_listing.jobs_department_listing_data_source</item>
     </item>
+    <!-- define column type -->
+    <item name="spinner" xsi:type="string">jobs_department_columns</item>
+    <!-- Button to add new item -->
+    <item name="buttons" xsi:type="array">
+        <item name="add" xsi:type="array">
+            <item name="name" xsi:type="string">add</item>
+            <item name="label" xsi:type="string" translate="true">Add New Department</item>
+            <item name="class" xsi:type="string">primary</item>
+            <item name="url" xsi:type="string">*/*/new</item> <!-- magento will translate it by jobs/department/new -->
+        </item>
+    </item>
 </argument>
     <!-- Data source -->
 <dataSource name="jobs_department_listing_data_source">
