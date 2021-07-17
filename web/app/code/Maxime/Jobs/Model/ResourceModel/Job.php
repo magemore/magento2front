@@ -20,4 +20,12 @@ class Job extends AbstractDb
         $this->_init('maxime_job', 'entity_id');
     }
 
+    public function getEnableStatus() {
+        return 1;
+    }
+
+    public function getDisableStatus() {
+        return 0;
+    }
+
 }
