@@ -175,7 +175,6 @@
             </action>
         </massaction>
 
-
         <!-- Paging -->
         <paging name="listing_paging">
             <argument name="data" xsi:type="array">
