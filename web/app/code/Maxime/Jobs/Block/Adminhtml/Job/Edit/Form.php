@@ -1,5 +1,5 @@
 <?php
-namespace Maxime\Jobs\Block\Adminhtml\Department\Edit;
+namespace Maxime\Jobs\Block\Adminhtml\Job\Edit;
 
 use \Magento\Backend\Block\Widget\Form\Generic;
 
@@ -37,8 +37,8 @@ class Form extends Generic
     protected function _construct()
     {
         parent::_construct();
-        $this->setId('department_form');
-        $this->setTitle(__('Department Information'));
+        $this->setId('job_form');
+        $this->setTitle(__('Job Information'));
     }
 
     /**
@@ -48,15 +48,15 @@ class Form extends Generic
      */
     protected function _prepareForm()
     {
-        /** @var \Maxime\Jobs\Model\Department $model */
-        $model = $this->_coreRegistry->registry('jobs_department');
+        /** @var \Maxime\Jobs\Model\Job $model */
+        $model = $this->_coreRegistry->registry('jobs_job');
 
         /** @var \Magento\Framework\Data\Form $form */
         $form = $this->_formFactory->create(
             ['data' => ['id' => 'edit_form', 'action' => $this->getData('action'), 'method' => 'post']]
         );
 
-        $form->setHtmlIdPrefix('department_');
+        $form->setHtmlIdPrefix('job_');
 
         $fieldset = $form->addFieldset(
             'base_fieldset',
@@ -68,15 +68,15 @@ class Form extends Generic
         }
 
         $fieldset->addField(
-            'name',
+            'title',
             'text',
-            ['name' => 'name', 'label' => __('Department Name'), 'title' => __('Department Name'), 'required' => true]
+            ['name' => 'title', 'label' => __('Job Title'), 'title' => __('Job Title'), 'required' => true]
         );
 
         $fieldset->addField(
             'description',
             'textarea',
-            ['name' => 'description', 'label' => __('Department Description'), 'title' => __('Department Description'), 'required' => true]
+            ['name' => 'description', 'label' => __('Job Description'), 'title' => __('Job Description'), 'required' => true]
         );
 
         $form->setValues($model->getData());
