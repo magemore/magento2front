@@ -99,6 +99,20 @@
                 </item>
             </argument>
 
+            <!-- Job Department Filter / Custom Select on DB -->
+            <filterSelect name="job_department">
+                <argument name="optionsProvider" xsi:type="configurableObject">
+                    <argument name="class" xsi:type="string">Maxime\Jobs\Model\Source\Department</argument>
+                </argument>
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="dataScope" xsi:type="string">department_id</item>
+                        <item name="label" xsi:type="string" translate="true">Department</item>
+                        <item name="caption" xsi:type="string" translate="true">Select...</item>
+                    </item>
+                </argument>
+            </filterSelect>
+
         </filters>
 
         <!-- Filter Search -->
