@@ -65,7 +65,7 @@ class Edit extends Action
     }
 
     /**
-     * Edit Department
+     * Edit Job
      *
      * @return \Magento\Backend\Model\View\Result\Page|\Magento\Backend\Model\View\Result\Redirect
      * @SuppressWarnings(PHPMD.NPathComplexity)
@@ -79,7 +79,7 @@ class Edit extends Action
         if ($id) {
             $model->load($id);
             if (!$model->getId()) {
-                $this->messageManager->addError(__('This department not exists.'));
+                $this->messageManager->addError(__('This job not exists.'));
                 /** \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
                 $resultRedirect = $this->resultRedirectFactory->create();
 
@@ -92,17 +92,17 @@ class Edit extends Action
             $model->setData($data);
         }
 
-        $this->_coreRegistry->register('jobs_department', $model);
+        $this->_coreRegistry->register('jobs_job', $model);
 
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->_initAction();
         $resultPage->addBreadcrumb(
-            $id ? __('Edit Department') : __('New Department'),
-            $id ? __('Edit Department') : __('New Department')
+            $id ? __('Edit Job') : __('New Job'),
+            $id ? __('Edit Job') : __('New Job')
         );
-        $resultPage->getConfig()->getTitle()->prepend(__('Departments'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Jobs'));
         $resultPage->getConfig()->getTitle()
-            ->prepend($model->getId() ? $model->getName() : __('New Department'));
+            ->prepend($model->getId() ? $model->getTitle() : __('New Job'));
 
         return $resultPage;
     }
