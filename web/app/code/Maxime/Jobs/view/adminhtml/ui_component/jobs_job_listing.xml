@@ -74,13 +74,14 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="columnsData" xsi:type="array">
-                        <item name="provider" xsi:type="string">jobs_job_listing.jobs_department_listing.jobs_job_columns</item>
+                        <item name="provider" xsi:type="string">jobs_job_listing.jobs_job_listing.jobs_job_columns</item>
                     </item>
                     <item name="component" xsi:type="string">Magento_Ui/js/grid/controls/columns</item>
                     <item name="displayArea" xsi:type="string">dataGridActions</item>
                 </item>
             </argument>
         </container>
+
     </container>
 
 
