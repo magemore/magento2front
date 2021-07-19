@@ -27,10 +27,6 @@ class Collection extends AbstractCollection
                 array('department_name' => 'name')
             );
 
-//        SELECT `main_table`.*, `department`.`name` AS `department_name` FROM `maxime_job` AS `main_table` INNER JOIN `maxime_department` AS `department` ON main_table.department_id = department.entity_id WHERE (`status` = '1')
-//        var_dump($this->getSelect()->__toString()); exit();
-
         return $this;
     }
-
 }
