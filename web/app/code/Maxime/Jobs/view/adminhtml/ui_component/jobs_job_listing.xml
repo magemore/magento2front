@@ -28,7 +28,7 @@
     </argument>
 
     <!-- Data source -->
-    <dataSource name="jobs_department_listing_data_source">
+    <dataSource name="jobs_job_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">JobGridDataProvider</argument> <!-- Data provider class -->
             <argument name="name" xsi:type="string">jobs_job_listing_data_source</argument> <!-- provider defined above -->
