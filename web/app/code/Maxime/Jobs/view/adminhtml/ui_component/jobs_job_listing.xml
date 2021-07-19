@@ -108,15 +108,15 @@
         </argument>
 
         <!-- Add columns with checkboxes -->
-<!--        <selectionsColumn name="ids">-->
-<!--            <argument name="data" xsi:type="array">-->
-<!--                <item name="config" xsi:type="array">-->
-<!--                    <item name="resizeEnabled" xsi:type="boolean">false</item>-->
-<!--                    <item name="resizeDefaultWidth" xsi:type="string">55</item>-->
-<!--                    <item name="indexField" xsi:type="string">entity_id</item>-->
-<!--                </item>-->
-<!--            </argument>-->
-<!--        </selectionsColumn>-->
+        <selectionsColumn name="ids">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">55</item>
+                    <item name="indexField" xsi:type="string">entity_id</item>
+                </item>
+            </argument>
+        </selectionsColumn>
 
         <!-- ID Column -->
         <column name="entity_id">
@@ -128,23 +128,70 @@
                 </item>
             </argument>
         </column>
+
+        <!-- Title Column -->
+        <column name="title">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="editor" xsi:type="array">
+                        <item name="editorType" xsi:type="string">text</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="required-entry" xsi:type="boolean">true</item>
+                        </item>
+                    </item>
+                    <item name="label" xsi:type="string" translate="true">Title</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- Type Column -->
+        <column name="type">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="editor" xsi:type="array">
+                        <item name="editorType" xsi:type="string">text</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="required-entry" xsi:type="boolean">true</item>
+                        </item>
+                    </item>
+                    <item name="label" xsi:type="string" translate="true">Type</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- Location Column -->
+        <column name="location">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="editor" xsi:type="array">
+                        <item name="editorType" xsi:type="string">text</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="required-entry" xsi:type="boolean">true</item>
+                        </item>
+                    </item>
+                    <item name="label" xsi:type="string" translate="true">Location</item>
+                </item>
+            </argument>
+        </column>
+
+        <!-- Date Column / Date type -->
+        <column name="date" class="Magento\Ui\Component\Listing\Columns\Date">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
+                    <item name="dataType" xsi:type="string">date</item>
+                    <item name="label" xsi:type="string" translate="true">Date</item>
+                    <item name="dateFormat" xsi:type="string" translate="true">MMM dd, YYYY</item>
+                </item>
+            </argument>
+        </column>
+
     </columns>
 
-    <!-- Title Column -->
-    <column name="title">
-        <argument name="data" xsi:type="array">
-            <item name="config" xsi:type="array">
-                <item name="filter" xsi:type="string">text</item>
-                <item name="editor" xsi:type="array">
-                    <item name="editorType" xsi:type="string">text</item>
-                    <item name="validation" xsi:type="array">
-                        <item name="required-entry" xsi:type="boolean">true</item>
-                    </item>
-                </item>
-                <item name="label" xsi:type="string" translate="true">Title</item>
-            </item>
-        </argument>
-    </column>
 
 
 </listing>
