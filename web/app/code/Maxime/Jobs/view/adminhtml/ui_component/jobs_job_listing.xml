@@ -87,7 +87,7 @@
 
 
     <!-- Columns -->
-    <columns name="jobs_department_columns">
+    <columns name="jobs_job_columns">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
                 <!-- Bookmarks behaviour -->
@@ -130,7 +130,7 @@
         </column>
     </columns>
 
-    <!-- Name Column -->
+    <!-- Title Column -->
     <column name="title">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
