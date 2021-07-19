@@ -68,7 +68,7 @@ class Edit extends Container
     public function getHeaderText()
     {
         if ($this->_coreRegistry->registry('jobs_job')->getId()) {
-            return __("Edit Job '%1'", $this->escapeHtml($this->_coreRegistry->registry('jobs_job')->getName()));
+            return __("Edit Job '%1'", $this->escapeHtml($this->_coreRegistry->registry('jobs_job')->getTitle()));
         } else {
             return __('New Job');
         }
