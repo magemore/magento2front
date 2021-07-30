@@ -10,7 +10,12 @@ use Laminas\Mail;
 class CustomerRegisterSuccess implements ObserverInterface
 {
 
+    protected $scopeConfig;
 
+    public function __construct(\Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig)
+    {
+        $this->scopeConfig = $scopeConfig;
+    }
 
     public function execute(Observer $observer)
     {
@@ -32,17 +37,21 @@ class CustomerRegisterSuccess implements ObserverInterface
     private function sendMail($customer) {
         $mail = new Mail\Message();
 
-        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $scopeConfig = $objectManager->create('\Magento\Framework\App\Config\ScopeConfigInterface');
+//        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+//        $scopeConfig = $objectManager->create('\Magento\Framework\App\Config\ScopeConfigInterface');
 
-        $sentFromName = $scopeConfig->getValue('trans_email/ident_general/name',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);;
-        $sentFromEmail = $scopeConfig->getValue('trans_email/ident_general/email',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);;
+        $sentFromName = $this->scopeConfig->getValue('trans_email/ident_general/name',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);;
+        $sentFromEmail = $this->scopeConfig->getValue('trans_email/ident_general/email',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);;
 
-        $sentToEmail = $scopeConfig->getValue('trans_email/ident_support/email',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-        $sentToName = $scopeConfig->getValue('trans_email/ident_support/name',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        $sentToEmail = $this->scopeConfig->getValue('trans_email/ident_support/email',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        $sentToName = $this->scopeConfig->getValue('trans_email/ident_support/name',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 
 
-        $mail->setBody('This is the text of the email.');
+        $content = 'First Name: '.$customer->getFirstname().'<br>';
+        $content .= 'Last Name: '.$customer->getLastname().'<br>';
+        $content .= 'Email: '.$customer->getEmail().'<br>';
+
+        $mail->setBody($content);
         $mail->setFrom($sentFromEmail, $sentFromName);
         $mail->addTo($sentToEmail, $sentToName);
         $mail->setSubject('New Customer Account');
