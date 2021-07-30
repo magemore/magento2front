@@ -13,18 +13,21 @@ class Index extends \Magento\Framework\App\Action\Action
     protected $_inlineTranslation;
     protected $_transportBuilder;
     protected $_scopeConfig;
+    protected $storeManager;
 
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
         \Magento\Framework\Translate\Inline\StateInterface $inlineTranslation,
         \Magento\Framework\Mail\Template\TransportBuilder $transportBuilder,
-        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
+        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
+        \Magento\Store\Model\StoreManagerInterface $storeManager
         )
     {
 
         $this->_inlineTranslation = $inlineTranslation;
         $this->_transportBuilder = $transportBuilder;
         $this->_scopeConfig = $scopeConfig;
+        $this->storeManager = $storeManager;
         parent::__construct($context);
 
 
@@ -32,16 +35,13 @@ class Index extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
-
         $sentFromName = $this->_scopeConfig ->getValue('trans_email/ident_general/name',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);;
         $sentFromEmail = $this->_scopeConfig ->getValue('trans_email/ident_general/email',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);;
-        echo $sentFromEmail;
-        exit();
         // Send Mail
         $this->_inlineTranslation->suspend();
         $sender = [
-            'name' => 'Alex',
-            'email' => 'alex@magemore.com'
+            'name' => $sentFromName,
+            'email' => $sentFromEmail
         ];
 
         $sentToEmail = $this->_scopeConfig ->getValue('trans_email/ident_support/email',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);
@@ -61,7 +61,6 @@ class Index extends \Magento\Framework\App\Action\Action
             ])
             ->setFromByScope($sender)
             ->addTo($sentToEmail,$sentToName)
-            //->addTo('owner@example.com','owner')
             ->getTransport();
 
         $transport->sendMessage();

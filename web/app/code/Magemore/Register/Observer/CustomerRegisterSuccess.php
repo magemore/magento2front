@@ -9,6 +9,9 @@ use Laminas\Mail;
 
 class CustomerRegisterSuccess implements ObserverInterface
 {
+
+
+
     public function execute(Observer $observer)
     {
         $customer = $observer->getCustomer();
@@ -28,10 +31,21 @@ class CustomerRegisterSuccess implements ObserverInterface
 
     private function sendMail($customer) {
         $mail = new Mail\Message();
+
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $scopeConfig = $objectManager->create('\Magento\Framework\App\Config\ScopeConfigInterface');
+
+        $sentFromName = $scopeConfig->getValue('trans_email/ident_general/name',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);;
+        $sentFromEmail = $scopeConfig->getValue('trans_email/ident_general/email',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);;
+
+        $sentToEmail = $scopeConfig->getValue('trans_email/ident_support/email',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        $sentToName = $scopeConfig->getValue('trans_email/ident_support/name',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+
+
         $mail->setBody('This is the text of the email.');
-        $mail->setFrom('Freeaqingme@example.org', "Sender's name");
-        $mail->addTo('Matthew@example.com', 'Name of recipient');
-        $mail->setSubject('TestSubject');
+        $mail->setFrom($sentFromEmail, $sentFromName);
+        $mail->addTo($sentToEmail, $sentToName);
+        $mail->setSubject('New Customer Account');
 
         $transport = new Mail\Transport\Sendmail();
         $transport->send($mail);
