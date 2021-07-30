@@ -13,16 +13,18 @@ class Index extends \Magento\Framework\App\Action\Action
     protected $_inlineTranslation;
     protected $_transportBuilder;
     protected $_scopeConfig;
-    protected $_logLoggerInterface;
-    protected $storeManager;
 
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $resultPageFactory
+        \Magento\Framework\Translate\Inline\StateInterface $inlineTranslation,
+        \Magento\Framework\Mail\Template\TransportBuilder $transportBuilder,
+        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
         )
     {
 
-
+        $this->_inlineTranslation = $inlineTranslation;
+        $this->_transportBuilder = $transportBuilder;
+        $this->_scopeConfig = $scopeConfig;
         parent::__construct($context);
 
 
@@ -31,8 +33,10 @@ class Index extends \Magento\Framework\App\Action\Action
     public function execute()
     {
 
-        echo 123; exit();
-        echo $sentToName = $this->_scopeConfig ->getValue('trans_email/ident_general/name',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);;
+        $sentFromName = $this->_scopeConfig ->getValue('trans_email/ident_general/name',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);;
+        $sentFromEmail = $this->_scopeConfig ->getValue('trans_email/ident_general/email',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);;
+        echo $sentFromEmail;
+        exit();
         // Send Mail
         $this->_inlineTranslation->suspend();
         $sender = [
@@ -44,7 +48,7 @@ class Index extends \Magento\Framework\App\Action\Action
         $sentToName = $this->_scopeConfig ->getValue('trans_email/ident_support/name',\Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 
         $transport = $this->_transportBuilder
-            ->setTemplateIdentifier('customemail_email_template')
+            ->setTemplateIdentifier('magemore_register_email_template')
             ->setTemplateOptions(
                 [
                     'area' => 'frontend',
@@ -52,8 +56,8 @@ class Index extends \Magento\Framework\App\Action\Action
                 ]
             )
             ->setTemplateVars([
-                'name'  => $sender['name'],
-                'email'  => $sender['email']
+                'name'  => 'Alex',
+                'email'  => 'alex@magemore.com'
             ])
             ->setFromByScope($sender)
             ->addTo($sentToEmail,$sentToName)
